@@ -14,6 +14,7 @@ module.exports.login = (req, res) => {
         res.send(err);
       }
 
+      console.log(err)
       if(result.length > 0){ //Si hay un user con esas credenciales en la BD
         const token = jwt.sign({username}, "Stack", {
           expiresIn: '3m'

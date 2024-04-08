@@ -50,17 +50,36 @@ const Login = () => {
   }
 
   return (
-    <>{loginSuccessfull ? <Home />:
-    <div className="login-container">
-      <form className="login-form">
-        <label className="login-label">Username:</label>
-        <input onChange={(event) => {setUsername(event.target.value)}} type="text" className="login-input" />
-        <label className="login-label">Password:</label>
-        <input onChange={(event) => {setPassword(event.target.value)}} type="password" className="login-input" />
-        <button className="login-button" onClick={handdleLogin}>Login</button>
-      </form>
-    </div>}</>
-  );
+  <div>
+    {loginSuccessfull ? <Home /> :
+      <>
+          <div className="login-container">
+          <img src="/images/farmedwithfruit3d.png" className="img-fruit" />
+          <img src="/images/womenfarmer.png" className="img-women" />
+          <form className="login-form">
+            <label className="login-label">Bienvenido de nuevo</label>
+            <label className="login-label1">Iniciar sesión</label>
+            <div className="input-field"> 
+              <input onChange={(event) => { setUsername(event.target.value) }}
+                type="text" required></input>
+              <label>Ingresa tu nombre de usuario</label>
+            </div>
+            <div className="input-field"> 
+              <input onChange={(event) => {setPassword(event.target.value)}} 
+              type="password" required></input>
+              <label>Contraseña</label>
+            </div>
+            <label className="login-label3">Olvidé mi contraseña</label>
+            <button className="login-button" onClick={handdleLogin}>Iniciar sesión</button>
+            <label className="login-abajo">¿Sin una cuenta?</label>
+            <label className="login-invitado">Iniciar como invitado</label>
+          </form>
+
+        </div>
+      </>
+    }
+  </div>
+);
 };
 
 export default Login;

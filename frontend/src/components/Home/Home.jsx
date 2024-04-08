@@ -1,18 +1,26 @@
 import React from 'react';
+import './Home.css';
+import Sidebar from './Sidebar section/Sidebar';
+import Navbar from './Navbar section/Navbar';
+import DataTables from './Table/DataTables';
 
 const Home = () => {
   const handleLogout = () => {
-    // Establece el token como una cadena vacía
-    localStorage.setItem('token', '');
-    // Redirige al usuario a la página de inicio de sesión
-    window.location.href = '/login'; // Redirige a la ruta de inicio de sesión
+    localStorage.setItem('token', ''); // Establece el token como una cadena vacía
+    window.location.href = '/login'; // Redirige al usuario a la página de inicio de sesión
   };
 
   return (
     <div>
-      <div>Felicidades estás loggeado!</div>
-      <button onClick={handleLogout}>Cerrar Sesión</button>
+      <Navbar />
+      <div className='dashboard'>
+          <Sidebar />
+        <div className='table-container'>
+          <DataTables/>
+      </div>
+      </div>
     </div>
+
   );
 };
 
