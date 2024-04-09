@@ -1,10 +1,10 @@
 import React from 'react';
-import './Home.css';
+import './HomeAdmin.css';
 import Sidebar from './Sidebar section/Sidebar';
 import Navbar from './Navbar section/Navbar';
 import DataTables from './Table/DataTables';
 
-const Home = () => {
+const HomeAdmin = () => {
   const handleLogout = () => {
     localStorage.setItem('token', ''); // Establece el token como una cadena vacía
     window.location.href = '/login'; // Redirige al usuario a la página de inicio de sesión
@@ -27,4 +27,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomeAdmin;

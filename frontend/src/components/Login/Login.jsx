@@ -72,7 +72,6 @@ const Login = () => {
             <label className="login-label3">Olvidé mi contraseña</label>
             <button className="login-button" onClick={handdleLogin}>Iniciar sesión</button>
             <label className="login-abajo">¿Sin una cuenta?</label>
-            <label className="login-invitado">Iniciar como invitado</label>
           </form>
 
         </div>

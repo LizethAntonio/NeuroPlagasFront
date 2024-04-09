@@ -2,9 +2,7 @@
   
 .menu {
     padding: 10px;
-    padding-left: 30px;
     padding-top: 33px;
-    display: flex;
     flex-direction: column;
     gap: 2.3rem;
     height: 94vh;

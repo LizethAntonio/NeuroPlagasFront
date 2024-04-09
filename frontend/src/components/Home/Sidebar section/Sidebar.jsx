@@ -1,6 +1,5 @@
 import React from 'react';
 import './Sidebar.css';
-import { BiSolidBoltCircle } from 'react-icons/bi';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHomeUser, faUser, faChartBar, faWarehouse, faBug, faVirus } from '@fortawesome/free-solid-svg-icons';
 
