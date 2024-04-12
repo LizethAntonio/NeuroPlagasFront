@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { RiAdminFill } from "react-icons/ri";
-import './Navbar.css';  // Importa el archivo de estilos CSS
+import { GiFarmer } from "react-icons/gi";
+import './NavbarFarmer.css';  // Importa el archivo de estilos CSS
 
-const Navbar = () => {
+const NavbarFarmer = () => {
   const [menuVisible, setMenuVisible] = useState(false);
   const menuRef = useRef(null);
 
@@ -29,8 +29,8 @@ const Navbar = () => {
   };
 
   const handleLogout = () => {
-    // Lógica para cerrar sesión
-    console.log('Cerrar sesión');
+    localStorage.setItem('token', ''); // Establece el token como una cadena vacía
+    window.location.href = '/login'; // Redirige al usuario a la página de inicio de sesión
   };
 
   return (
@@ -39,7 +39,7 @@ const Navbar = () => {
         <img src="/images/tomatito.png"/> {/*Imagen*/}
         <h2>NeuroPlagas</h2>              {/*Titulo*/}
         <div className='notify' ref={menuRef}>
-          <RiAdminFill className='icon' onClick={toggleMenu}/>   {/*Icono del rol*/}
+          <GiFarmer className='icon' onClick={toggleMenu}/>   {/*Icono del rol*/}
           {menuVisible && (
             <div className="menu-options">
               <p onClick={handleProfile}>Configurar perfil</p>
@@ -48,13 +48,13 @@ const Navbar = () => {
           )}
         </div>
         <div className='user-info'>
-          <label>Miguel Angel Sanchez Gonzalez</label>
+          <label>Lizeth Antonio</label>
           <br />
-          <label>19161407@gmail.com</label>
+          <label>1916@gmail.com</label>
         </div>
       </div>
     </div>
   );
 };
 
-export default Navbar;
+export default NavbarFarmer;

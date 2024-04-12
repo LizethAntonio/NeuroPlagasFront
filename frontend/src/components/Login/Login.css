@@ -1,4 +1,3 @@
-
 /* Estilos para el contenedor principal del login */
 .login-container {
   position: relative; /* Cambiado a posición relativa */
@@ -17,7 +16,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 50%; /* Cubre la mitad izquierda del contenedor */
+  width: 50%;
   height: 100%;
   background-color: #c62426; /* Cambia este color por el que desees */
 }
@@ -92,26 +91,25 @@
   color: #c62426;
 }
 
-
 .input-field {
   position: relative;
   margin: 15px 0;
 }
 
 .input-field input {
-  width: 389px;
-  height: 45px;
+  width: 390px;
+  height: 40px;
   font-size: 20px;
   margin-top: 40px;
-  margin-left: 11px;
+  margin-left: 15px;
   border-radius: 6px;
   padding: 0px 10px;
   border: 2px solid #E5D8C8;
   background: transparent;
-  color: #c62426;
+  color: #000000;
   outline: none;
-  z-index: 1; /* Asegura que el input esté en un nivel superior */
-  position: relative; /* Asegura que la posición sea relativa */
+  z-index: 1;
+  position: relative; 
   font-family: 'Roboto', sans-serif;
 }
 

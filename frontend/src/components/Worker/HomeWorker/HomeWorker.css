@@ -8,18 +8,20 @@
 
 .dashboard {
     display: flex;
-    gap: 20px;
+    gap: 10px;
 }
 
-.table-container {
-    width: 65%;
-    margin-top: 20px;
+.table-container{
+    width: 60%;
+    background: #fff;
+    border-radius: 20px;
+    padding: 10px;
 }
-
 
 .rol{
     color: #c62426;
 }
+
 .space{
     padding: 15px;
 }

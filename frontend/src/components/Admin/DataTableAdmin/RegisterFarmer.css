@@ -1,0 +1,72 @@
+/* Estilos base */
+.farmer-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    max-width: 100%; /* Para hacerlo responsivo */
+    display: flex;
+    flex-direction: column;
+  }
+  
+h4{
+    padding-top: 10px;
+    margin-bottom: 35px;
+    text-align: center;
+  }
+
+  h5{
+    text-align: right;
+    padding-bottom: 10px;
+    color: #c62426;
+  }
+
+  .inputs {
+    flex-grow: 1;
+    margin-top: 5px;
+    margin-left: 0px;
+    width: 75%;
+    padding: 10px;
+    border: 2px solid #d4d0d0;
+  }
+
+  .inputs2 {
+    flex-grow: 1;
+    margin-top: 5px;
+    margin-left: 0px;
+    width: 50%;
+    padding-left: 8px;
+    margin-bottom: 5px;
+    border: 2px solid #d4d0d0;
+  }
+
+  .form-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Distribuye los elementos horizontalmente */
+    margin-bottom: 20px;
+  }
+  
+  .column {
+    flex: 1; /* Ocupa el espacio disponible */
+    margin-right: 10px; /* Espacio entre las columnas */
+  }
+  
+  .column:last-child {
+    margin-right: 0; /* Elimina el margen derecho del último elemento */
+  }
+
+  .password-rules label {
+    display: block;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: space-between; /* Distribuye los elementos horizontalmente */
+  }

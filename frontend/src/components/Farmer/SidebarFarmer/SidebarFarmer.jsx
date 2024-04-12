@@ -1,22 +1,22 @@
 import React from 'react';
-import './Sidebar.css';
+import './SidebarFarmer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHomeUser, faUser, faChartBar, faWarehouse, faBug, faVirus } from '@fortawesome/free-solid-svg-icons';
+import { faBell, faPersonDigging, faChartBar, faWarehouse, faBug, faVirus } from '@fortawesome/free-solid-svg-icons';
 
-const Sidebar = () => {
+const SidebarFarmer = () => {
     return (
         <div className='menu'>
             <div className='menu--list'>
                 <a href="#" className='item'>
-                    <FontAwesomeIcon icon={faHomeUser} className='icon'/> {/* Icono de trabajador */}
-                    Agricultor
+                    <FontAwesomeIcon icon={faBell} className='icon'/> {/* Icono de notificaciones */}
+                    Notificaciones
                 </a>
                 <a href="#" className='item'>
                     <FontAwesomeIcon icon={faWarehouse} className='icon'/> {/* Icono de invernadero */}
                     Invernadero
                 </a>
                 <a href="#" className='item'>
-                    <FontAwesomeIcon icon={faUser} className='icon'/> {/* Icono de trabajador */}
+                    <FontAwesomeIcon icon={faPersonDigging} className='icon'/> {/* Icono de trabajador */}
                     Trabajador
                 </a>
                 <a href="#" className='item'>
@@ -36,7 +36,5 @@ const Sidebar = () => {
     );
 };
 
-export default Sidebar;
-
-
+export default SidebarFarmer;
 

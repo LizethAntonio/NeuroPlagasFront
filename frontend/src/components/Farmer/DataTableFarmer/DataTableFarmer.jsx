@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import DataTable from 'react-data-table-component';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import './DataTables.css'; 
+import './DataTableFarmer.css'; 
 
-const DataTables = () => {
+const DataTableFarmer = () => {
     const columns = [
         {
             name: 'ID',
@@ -97,4 +97,4 @@ const DataTables = () => {
     );
 };
 
-export default DataTables;
+export default DataTableFarmer;
