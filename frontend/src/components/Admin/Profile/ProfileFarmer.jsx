@@ -1,31 +1,32 @@
 import React, { useState } from 'react';
-import './RegisterFarmer.css';
+import './ProfileFarmer.css';
 
-const RegisterFarmer = () => {
-
-const[values, setValues] = useState({
-  nombre: "",
-  primerApellido: "",
-  segundoApellido: "",
-  telefono: "",
-  correo: "",
-  nombreUsuario: "",
-  contrasenia:""
-});
-
-const handdleInputChange = (event) =>{
-  const {name, value} = event.target;
-  setValues({
-    ...values,
-    [name]: value,
-  });
-};
-
-
-return (
-  <div className="farmer-form">
-    <h4>Registrar agricultor</h4>
-      <h5>*Campos requeridos</h5>
+const ProfileFarmer = ({ onCancelClick}) => {
+    const [values, setValues] = useState({
+      nombre: "",
+      primerApellido: "",
+      segundoApellido: "",
+      telefono: "",
+      correo: "",
+      nombreUsuario: "",
+      contrasenia:""
+    });
+  
+    const handdleInputChange = (event) => {
+      const { name, value } = event.target;
+      setValues({
+        ...values,
+        [name]: value,
+      });
+    };
+    
+  
+    return (
+      <div className="farmer-form">
+        <div className='centrar'>
+        <h4>Configurar perfil</h4>
+        <h5>*Campos requeridos</h5>
+        <label className='label-datos'>Configura sus datos personales</label>
         <div className="form-section">
           <div className="column">
             <label>Nombre*</label>
@@ -86,8 +87,8 @@ return (
           </div>
           <div className="column"></div>
         </div>
-
-    <h4>Registrar sus datos de inicio de sesión</h4>
+  
+        <h4>Configura tus datos de inicio de sesión</h4>
         <div className="form-section">
           <div className="column">
             <label>Nombre de usuario*</label>
@@ -107,21 +108,18 @@ return (
               type="password"
               required
               name="contrasenia"
+              placeholder="Contraseña"
               onChange={handdleInputChange}
             />
           </div>
         </div>
-          <div className="password-rules">
-            <label>*La contraseña debe ser mínimo de 8 caracteres.</label>
-            <label>*Debes de incluir letras mayúsculas y minúsculas</label>
-            <label>*Debes de incluir al menos un número y un símbolo (Todos son válidos).</label>
-          </div>
-          <div>
-            <button type="submit">Guardar cambios</button>
-            <button>Cancelar</button>
-          </div>
-  </div>
-);
-};
+        <div className='button-container'>
+          <button className='button' type="submit" >Guardar cambios</button>
+          <button className='button-cancel' onClick={onCancelClick}>Cancelar</button>
+        </div>
+      </div>
+      </div>
+    );
+  };
 
-export default RegisterFarmer;
+export default ProfileFarmer;

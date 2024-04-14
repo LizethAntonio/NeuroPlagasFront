@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { Profiler, useState } from 'react';
 import DataTable from 'react-data-table-component';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faPencilAlt, faTrash } from '@fortawesome/free-solid-svg-icons';
 import './DataTableAdmin.css'; 
-import RegisterFarmer from './RegisterFarmer';
+import RegisterFarmer from '../Register/RegisterFarmer';
+import ModifyFarmer from '../Modify/ModifyFarmer';
+import DeleteFarmer from '../Delete/DeleteFarmer';
+import ProfileFarmer from '../Profile/ProfileFarmer';
 
 const DataTableAdmin = () => {
     const columns = [
@@ -42,7 +45,16 @@ const DataTableAdmin = () => {
         },
         {
             name: 'Contraseña',
-            selector: row => row.contrasenia
+            selector: row => '********'
+        },
+        {
+            name: 'Acciones',
+            cell: row => (
+                <div className='icons-container'>
+                    <FontAwesomeIcon icon={faPencilAlt} onClick={() => handleEditClick(row)} className='edit-icon' size='lg'/>
+                    <FontAwesomeIcon icon={faTrash} onClick={() => handleDeleteClick(row)} className='delete-icon' size='lg' />
+                </div>
+            )
         }
     ];
 
@@ -60,7 +72,10 @@ const DataTableAdmin = () => {
     ];
 
     const [records, setRecords] = useState(data);
-    const [showForm, setShowForm] = useState(false); // Estado para controlar la visibilidad del formulario
+    const [showForm, setShowForm] = useState(false); //Form de register
+    const [showEditForm, setShowEditForm] = useState(false); //Form de edicion
+    const [showDeleteForm, setShowDeleteForm] = useState(false); //Form de eliminacion
+    const [showProfileForm, setShowProfileForm] = useState(false);
 
     const handleFilter = (event) => {
         const newData = data.filter(row => {
@@ -70,38 +85,50 @@ const DataTableAdmin = () => {
     };
 
     const handleRegisterClick = () => {
-        setShowForm(true); // Mostrar el formulario al hacer clic en el botón
-    };
+        setShowForm(true);
+      };
+      
+      const handleCancelClick = () => {
+        setShowForm(false);
+        setShowEditForm(false);
+        setShowDeleteForm(false);
+      };
 
-    const paginacionOpciones={
-        rowsPerPageText: 'Filas por página',
-        rangeSeparatorText: 'de',
-        selectAllRowsItem: true,
-        selectAllRowsItemText: 'Todos'
-    }
+
+      const handleEditClick = (row) => {
+        setShowEditForm(true);
+      };
+
+      const handleDeleteClick = (row) => {
+        setShowDeleteForm(true);
+      };
+
 
     return (
-        <div className='table-responsive'>
-            <DataTable 
-                title="Agricultores"
-                columns={columns}
-                data={records}
-                responsive={true}
-                selectableRows
-                fixedHeader
-                pagination
-                paginationComponentOptions={paginacionOpciones}
-                actions={
-                    <div className='header-table'>
-                        <FontAwesomeIcon icon={faSearch} className='search' />
-                        <input type="text" placeholder='Buscar...' onChange={handleFilter} />
-                        <button type="button" className='buttonAgricultor' onClick={handleRegisterClick}>Registrar agricultor</button>
-                    </div>
-                }
-            />
-            {showForm && <RegisterFarmer />} {/* Mostrar el formulario si showForm es true */}
+        <div className='responsive-table'>
+          <DataTable 
+            title="Agricultores"
+            columns={columns}
+            data={records}
+            responsive={true}
+            selectableRows
+            fixedHeader
+            pagination
+            actions={
+                <div className='header-table'>
+                <FontAwesomeIcon icon={faSearch} className='search' />
+                <input type="text" placeholder='Buscar...' onChange={handleFilter} />
+                <button type="button" className='buttonAgricultor' onClick={handleRegisterClick}>Registrar agricultor</button>
+              </div>
+            }
+          />
+          {showForm && <RegisterFarmer onCancelClick={handleCancelClick} />} {/* Mostrar el formulario si showForm es true */}
+          {showEditForm && <ModifyFarmer onCancelClick={handleCancelClick} />}
+          {showDeleteForm && <DeleteFarmer onCancelClick={handleCancelClick} />}
+          
         </div>
     );
+    
 };
 
 export default DataTableAdmin;

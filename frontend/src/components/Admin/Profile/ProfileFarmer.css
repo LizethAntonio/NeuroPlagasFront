@@ -4,20 +4,26 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 1;
+    z-index: 9999;
     background-color: #fff;
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 500px;
+    width: 520px;
     max-width: 100%; /* Para hacerlo responsivo */
     display: flex;
     flex-direction: column;
+    
+  }
+
+  .centrar{
+    padding: 15px;
   }
   
-h4{
-    padding-top: 10px;
-    margin-bottom: 35px;
+  h4{
+    
+    padding-top: 20px;
+    margin-bottom: 20px;
     text-align: center;
   }
 
@@ -27,7 +33,13 @@ h4{
     color: #c62426;
   }
 
+  .label-datos{
+    font-weight: bold;
+    z-index: 1;
+  }
+
   .inputs {
+    z-index: 1;
     flex-grow: 1;
     margin-top: 5px;
     margin-left: 0px;
@@ -37,6 +49,7 @@ h4{
   }
 
   .inputs2 {
+    z-index: 1;
     flex-grow: 1;
     margin-top: 5px;
     margin-left: 0px;
@@ -50,23 +63,50 @@ h4{
     display: flex;
     flex-direction: row;
     justify-content: space-between; /* Distribuye los elementos horizontalmente */
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   
   .column {
     flex: 1; /* Ocupa el espacio disponible */
     margin-right: 10px; /* Espacio entre las columnas */
-  }
-  
-  .column:last-child {
-    margin-right: 0; /* Elimina el margen derecho del último elemento */
+    margin-top: 10px;
   }
 
   .password-rules label {
     display: block;
+    padding-top: 4px;
   }
   
+  
   .button-container {
+    padding-top: 20px;
     display: flex;
-    justify-content: space-between; /* Distribuye los elementos horizontalmente */
+    justify-content: space-between; /* Distribuye el espacio entre los botones */
+    align-items: center; /* Centra verticalmente los botones */
   }
+  
+  .button {
+    padding: 12px;
+    margin-left: 20px;
+    color: white;
+    background-color: #c62426;
+    border: 2px solid #c62426;
+    border-radius: 10px;
+  }
+
+  .button-cancel {
+    width: 120px;
+    padding: 12px;
+    color: white;
+    background-color: #c62426;
+    border: 2px solid #c62426;
+    border-radius: 10px;
+    margin-right: 20px;
+  }
+  
+  /* Estilos adicionales para el botón */
+  button {
+    transform: scale(1, 1);
+    cursor: pointer;
+  }
+  
